@@ -5,6 +5,7 @@
  */
 package unitec.maven.boot;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
@@ -35,6 +36,7 @@ public class Aplicacion {
     public static void main(String[] args) {
         // TODO code application logic here
         SpringApplication.run(Aplicacion.class, args);
+        
     }
     
 }
