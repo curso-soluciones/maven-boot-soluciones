@@ -14,10 +14,12 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class ConfigurarBeans {
-    
+   /*
+    Inyectamos la dependencia a travéz este bean
+    */ 
     @Bean
     Leer Leer(){
-     return new LeerArchivo();
+     return new LeerMysql();
     } 
     
 }
