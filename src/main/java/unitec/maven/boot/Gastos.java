@@ -35,8 +35,8 @@ public class Gastos implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "ID_GASTO")
-    private Integer idGasto;
+    @Column(name = "ID_GASTOS")
+    private Integer idGastos;
     @Size(max = 280)
     @Column(name = "CONCEPTO")
     private String concepto;
@@ -53,16 +53,16 @@ public class Gastos implements Serializable {
     public Gastos() {
     }
 
-    public Gastos(Integer idGasto) {
-        this.idGasto = idGasto;
+    public Gastos(Integer idGastos) {
+        this.idGastos = idGastos;
     }
 
-    public Integer getIdGasto() {
-        return idGasto;
+    public Integer getIdGastos() {
+        return idGastos;
     }
 
-    public void setIdGasto(Integer idGasto) {
-        this.idGasto = idGasto;
+    public void setIdGastos(Integer idGastos) {
+        this.idGastos = idGastos;
     }
 
     public String getConcepto() {
@@ -100,7 +100,7 @@ public class Gastos implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (idGasto != null ? idGasto.hashCode() : 0);
+        hash += (idGastos != null ? idGastos.hashCode() : 0);
         return hash;
     }
 
@@ -111,7 +111,7 @@ public class Gastos implements Serializable {
             return false;
         }
         Gastos other = (Gastos) object;
-        if ((this.idGasto == null && other.idGasto != null) || (this.idGasto != null && !this.idGasto.equals(other.idGasto))) {
+        if ((this.idGastos == null && other.idGastos != null) || (this.idGastos != null && !this.idGastos.equals(other.idGastos))) {
             return false;
         }
         return true;
@@ -119,7 +119,7 @@ public class Gastos implements Serializable {
 
     @Override
     public String toString() {
-        return "unitec.maven.boot.Gastos[ idGasto=" + idGasto + " ]";
+        return "unitec.maven.boot.Gastos[ idGastos=" + idGastos + " ]";
     }
     
 }

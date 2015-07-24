@@ -9,10 +9,6 @@ package unitec.maven.boot;
  *
  * @author campitos
  */
-public class LeerArchivo implements Leer{
-    
-    public String leer(){
-        return "Este es un archivo";
-    }
+public class ControladorGastos {
     
 }
