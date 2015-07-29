@@ -42,23 +42,27 @@ public class Aplicacion {
     public static void main(String[] args)throws Exception{
         // TODO code application logic here
         SpringApplication.run(Aplicacion.class, args);
-        Tarjeta t=new Tarjeta();
-           t.setNombre("Banamex");
+        //Paso 1 abrrir una sesssion factory
+ SessionFactory fac=       HibernateUtilidades.getSessionFactory();
+  Session sesion= fac.openSession();
+  Transaction tranza=sesion.beginTransaction();
+  Tarjeta t=new Tarjeta();
           t.setDiaCorte(28);
-        Gastos g1=new Gastos();
-        g1.setIdTarjeta(new Tarjeta(2));
-        g1.setFecha(new Date());
-        g1.setConcepto("six de gerber");
-        g1.setCantidad(200f); 
-     
-    SessionFactory fac=           HibernateUtilidades.getSessionFactory();
-   Session ses=               fac.openSession();
-   Transaction tranza=ses.beginTransaction();
-   ses.save(g1);
-   tranza.commit();
- ses.close();
-        System.out.println("guardado con exito");
-            
+          t.setNombre("BANAMEX");
+        // sesion.save(t);
+          
+      Gastos g=new Gastos();
+          g.setCantidad(300f);
+          g.setConcepto("cena baile");
+          g.setFecha(new Date()); 
+          g.setIdTarjeta(new Tarjeta(1)); 
+        // sesion.save(g);
+          
+          
+         tranza.commit();
+         sesion.close();
+         System.out.println("Tarjeta guadada con exito");
+ 
           
     }
 
